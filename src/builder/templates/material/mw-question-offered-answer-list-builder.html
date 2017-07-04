@@ -8,9 +8,15 @@
                 <i ng-if="ctrl.question.type=='radio'" class="fa fa-circle-thin fa-fw"></i>
                 <i ng-if="ctrl.question.type=='checkbox'" class="fa fa-square-o fa-fw"></i>
             </div>
+
             <md-input-container>
                 <input wd-focus-me="ctrl.isNewAnswer[answer.id]" type="text" ng-model="answer.value" ng-keypress="ctrl.keyPressedOnInput($event,answer)" required class="form-control offered-answer-value " ng-readonly="ctrl.readOnly">
             </md-input-container>
+
+            <md-switch ng-if="ctrl.question.type=='radio'" ng-true-value="true" ng-false-value="false" translate="mwForm.question.buttons.rightAnswer"  aria-label="Opção Correta" ng-change="ctrl.updateRightAnswer(answer, ctrl.question)" ng-model="answer.isRightAnswer">
+                Opção Correta
+            </md-switch>
+
             <md-button role="button" class="md-raised md-icon-button remove-item-button" ng-click="ctrl.removeOfferedAnswer(answer)" ng-if="!ctrl.readOnly"
                     ng-attr-title="{{'mwForm.buttons.remove' | translate}}">
                 <md-tooltip md-direction="top">

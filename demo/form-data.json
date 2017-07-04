@@ -189,6 +189,7 @@
                 "id": "589eabfe8af7673375f137eca83f194d",
                 "orderNo": 2,
                 "value": "No",
+                "isRightAnswer": true,
                 "pageFlow": {
                   "nextPage": true,
                   "label": "mwForm.pageFlow.goToNextPage"
@@ -198,6 +199,7 @@
                 "id": "e2b88bc85951622b3b59901a77678255",
                 "orderNo": 2,
                 "value": "Yes",
+                "isRightAnswer": false,
                 "pageFlow": {
                   "nextPage": true,
                   "label": "mwForm.pageFlow.goToNextPage"

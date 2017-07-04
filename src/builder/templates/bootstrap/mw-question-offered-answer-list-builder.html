@@ -10,14 +10,21 @@
                 <i ng-if="ctrl.question.type=='checkbox'" class="fa fa-square-o fa-fw"></i>
             </div>
             <input wd-focus-me="ctrl.isNewAnswer[answer.id]" type="text" ng-model="answer.value" ng-keypress="ctrl.keyPressedOnInput($event,answer)" required class="form-control offered-answer-value " ng-readonly="ctrl.readOnly">
+            <span class="form-inline" ng-if="ctrl.question.type=='radio'">
+                <label>
+                    <input type="radio" required id="answer-{{answer.id}}" name="is_right_answer[{{ctrl.question.id}}]" value="true" ng-value="true" ng-change="ctrl.updateRightAnswer(answer, ctrl.question)" ng-model="answer.isRightAnswer">
+                    <span translate="mwForm.question.buttons.rightAnswer">Opção Correta</span>
+                </label>
+            </span>
+            &nbsp;&nbsp;&nbsp;
             <button role="button" class="remove-item-button" ng-click="ctrl.removeOfferedAnswer(answer)" ng-if="!ctrl.readOnly"
                     ng-attr-title="{{'mwForm.buttons.remove' | translate}}" uib-popover="{{'mwForm.buttons.remove' | translate}}" popover-trigger="mouseenter" popover-placement="top">
                 <i class="fa fa-times"></i>
             </button>
+
             <span ng-if="ctrl.question.pageFlowModifier" class="form-inline">
                  <select ng-options="pageFlow.label|translate:pageFlow for pageFlow in ctrl.possiblePageFlow" ng-model="answer.pageFlow"  class="form-control" ng-disabled="ctrl.readOnly"></select>
             </span>
-
         </div>
 
     </div>

@@ -253,6 +253,7 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                     id: mwFormUuid.get(),
                     orderNo: ctrl.question.offeredAnswers.length + 1,
                     value: null,
+                    isRightAnswer: false,
                     pageFlow:defaultPageFlow
                 };
                 ctrl.isNewAnswer[answer.id]=true;
@@ -279,8 +280,16 @@ angular.module('mwFormBuilder').directive('mwQuestionOfferedAnswerListBuilder', 
                     keyEvent.preventDefault()
                     ctrl.addNewOfferedAnswer();
                 }
+            };
 
+            ctrl.updateRightAnswer = function(answer, question){
 
+                console.log('updateRightAnswer');
+
+                angular.forEach(question.offeredAnswers, function (a) {
+                    a.isRightAnswer = false;
+                });
+                answer.isRightAnswer = true;
             };
 
             // Prior to v1.5, we need to call `$onInit()` manually.
