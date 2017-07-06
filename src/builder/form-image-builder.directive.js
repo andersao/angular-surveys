@@ -16,6 +16,7 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
         require: '^mwFormPageElementBuilder',
         scope: {
             image: '=',
+            orderNo: '=',
             formObject: '=',
             onReady: '&',
             isPreview: '=?',

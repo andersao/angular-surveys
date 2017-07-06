@@ -1,0 +1,56 @@
+{
+  "e2473fd90ef36ab5bae5f0a33cf01ea3": {
+    "answer": 10
+  },
+  "17079f62650f74b378b1436aefbba299": {
+    "answer": "Bob"
+  },
+  "4775dc2cbdc8da2e63811caf9bac33f5": {
+    "answer": "2016-05-20T07:00:00.000Z"
+  },
+  "671fd9130b1e7ead23dd2e90555474c9": {
+    "answer": "1970-01-01T12:00:00.000Z"
+  },
+  "67e855cec05b1c93ff57d376d798ec45": {
+    "answer": "bob@bob.com"
+  },
+  "a333d8d16ee02341e72eb94629abfd98": {
+    "answer": 18
+  },
+  "15c42f5d490d68abf3c48e790ed508d6": {
+    "answer": "http://bob.com"
+  },
+  "4c39312a94e066a856a195753832de05": {
+    "answer": "Bobbing for Apples"
+  },
+  "b6f584afe412f506eb56e922d84322e5": {
+    "36683a4385337df9ab6b580207272b5b": "223bbfa4fecc0900f21c8a79ead634a2",
+    "a5b1523d67c878e149d86f0ffe4bbc1b": "1f1b13a99fa798fc5deedb1238e0d92c"
+  },
+  "3643ebd79db7a48115058b5ce75a74c8": {
+    "priorityList": [
+      {
+        "priority": 1,
+        "id": "68ce06f38d686faaa56b63b9d24d2a86"
+      },
+      {
+        "priority": 2,
+        "id": "3424ad4e994547d0a251f7135df35306"
+      }
+    ]
+  },
+  "be2f2711c2c5f869fa636fde360a9455": {
+    "selectedAnswer": "589eabfe8af7673375f137eca83f194d"
+  },
+  "719ef4f8afc21bf07ecfcd81b077d7b0": {
+    "selectedAnswers": [
+      "992d824c43e4032b297a959bb2b0e925",
+      "451cfffbb07ab6f201a08e3be739d534",
+      "c2a18d282713ea602f31073626f15ed5"
+    ]
+  },
+  "bcaf100bc048236e2939fe71cae38fb3": {
+    "beddb9695d2b814d859ace81c26a58c7": 60,
+    "2699c939c2b1596030a6aba4edbbdafb": 40
+  }
+}

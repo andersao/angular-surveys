@@ -16,6 +16,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
         require: '^mwFormPageElementBuilder',
         scope: {
             paragraph: '=',
+            orderNo: '=',
             formObject: '=',
             onReady: '&',
             isPreview: '=?',

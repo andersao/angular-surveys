@@ -141,6 +141,7 @@
             "orLabel": "ou ",
             "otherLabel": "Outro: ",
             "userAnswer": "Resposta do usuário",
+            "rightAnswer":"Opção Correta",
             "buttons":{
                 "addOption":"Clique para adicinar uma opção",
                 "addOther":"Adicionar 'Outro'",

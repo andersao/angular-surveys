@@ -141,6 +141,7 @@
             "orLabel": "or ",
             "otherLabel": "Other: ",
             "userAnswer": "User answer",
+            "rightAnswer":"Right Answer",
             "buttons":{
                 "addOption":"Click to add option",
                 "addOther":"Add 'Other'",

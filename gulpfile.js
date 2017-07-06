@@ -67,8 +67,9 @@ function buildModuleStream(destPrefix, moduleName) {
 
     var tmpDir = 'tmp/'+moduleName;
 
-    var bootstrapTemplates = buildTemplates(tmpDir+'/templates/bootstrap/', moduleName, 'dist', destPrefix+'-bootstrap');
-    var materialTemplates = buildTemplates(tmpDir+'/templates/material/', moduleName, 'dist', destPrefix+'-material');
+    var videocarroTemplates = buildTemplates(tmpDir+'/templates/videocarro/', moduleName, 'dist', destPrefix+'-videocarro');
+    var bootstrapTemplates  = buildTemplates(tmpDir+'/templates/bootstrap/', moduleName, 'dist', destPrefix+'-bootstrap');
+    var materialTemplates   = buildTemplates(tmpDir+'/templates/material/', moduleName, 'dist', destPrefix+'-material');
 
     var module =  gulp.src(tmpDir + '/**/*.js')
         .pipe(plugins.plumber({ errorHandler: onError }))

@@ -596,6 +596,7 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
         require: '^mwFormPageElementBuilder',
         scope: {
             question: '=',
+            orderNo: '=',
             formObject: '=',
             onReady: '&',
             isPreview: '=?',
@@ -738,6 +739,7 @@ angular.module('mwFormBuilder').factory("FormParagraphBuilderId", function(){
         require: '^mwFormPageElementBuilder',
         scope: {
             paragraph: '=',
+            orderNo: '=',
             formObject: '=',
             onReady: '&',
             isPreview: '=?',
@@ -1116,6 +1118,7 @@ angular.module('mwFormBuilder').factory("FormImageBuilderId", function(){
         require: '^mwFormPageElementBuilder',
         scope: {
             image: '=',
+            orderNo: '=',
             formObject: '=',
             onReady: '&',
             isPreview: '=?',
