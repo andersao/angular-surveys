@@ -79,8 +79,7 @@ angular.module('mwFormViewer').directive('mwFormViewer', function ($rootScope) {
                 ctrl.formSubmitted=true;
                 ctrl.submitStatus='IN_PROGRESS';
 
-                ctrl.setCurrentPage(null);
-
+                //ctrl.setCurrentPage(null);
 
                 var resultPromise = ctrl.onSubmit();
                 resultPromise.then(function(){
