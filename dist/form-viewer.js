@@ -397,6 +397,7 @@ angular.module('mwFormViewer').factory("FormQuestionId", function(){
         require: '^mwFormViewer',
         scope: {
             question: '=',
+            orderNo: '=',
             questionResponse: '=',
             readOnly: '=?',
             options: '=?',
