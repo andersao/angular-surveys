@@ -71,7 +71,19 @@ angular.module('mwFormViewer').directive('mwFormViewer', function ($rootScope) {
                         ctrl.currentPage=null;
                         $timeout(ctrl.resetPages, 0);
 
-                    }
+                    };
+
+                    ctrl.api.setSubmitStatus = function(status){
+                        $timeout(function () {
+                            ctrl.submitStatus=status;
+                        });
+                    };
+
+                    ctrl.api.setFormSubmitted = function(status){
+                        $timeout(function () {
+                            ctrl.formSubmitted=status;
+                        });
+                    };
                 }
             };
 
