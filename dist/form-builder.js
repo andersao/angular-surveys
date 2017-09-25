@@ -1217,22 +1217,14 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             ctrl.$onInit = function() {
                 ctrl.currentPage = 0;
 
-                console.group('mwFormBuilder:$onInit');
-                console.debug('ctrl.currentPage:', ctrl.currentPage);
-                console.debug('ctrl.formData:', ctrl.formData);
-
                 if(!ctrl.formData.pages || !ctrl.formData.pages.length){
-                    console.debug('pages empty');
                     ctrl.formData.pages = [];
                     ctrl.formData.pages.push(createEmptyPage(1));
                 }
 
                 ctrl.options = mwFormBuilderOptions.$init(ctrl.options);
 
-                console.debug('ctrl.options:', ctrl.options);
-
                 if(ctrl.api){
-                    console.debug('ctrl.api:', ctrl.api);
 
                     ctrl.api.reset = function(){
                         for (var prop in ctrl.formData) {
@@ -1246,27 +1238,21 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
 
                     }
                 }
-
-                console.groupEnd();
             };
 
 
             ctrl.numberOfPages=function(){
-                console.debug('mwFormBuilder:numberOfPages');
                 return Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize);
             };
             ctrl.lastPage = function(){
-                console.debug('mwFormBuilder:lastPage');
                 ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
             };
             ctrl.addPage = function(){
-                console.debug('mwFormBuilder:addPage');
                 ctrl.formData.pages.push(createEmptyPage(ctrl.formData.pages.length+1));
                 ctrl.lastPage();
                 $rootScope.$broadcast("mwForm.pageEvents.pageAdded");
             };
             ctrl.onChangePageSize = function(){
-                console.debug('mwFormBuilder:onChangePageSize');
                 if(ctrl.currentPage > Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1)){
                     ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
                 }
@@ -1274,8 +1260,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
 
 
             function createEmptyPage(number){
-                console.debug('mwFormBuilder:createEmptyPage: [number:'+number+']');
-
                 var defaultPageFlow = null;
                 if(ctrl.possiblePageFlow){
                     defaultPageFlow = ctrl.possiblePageFlow[0];
@@ -1292,8 +1276,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             }
 
             function updatePageNumbers() {
-                console.debug('mwFormBuilder:updatePageNumbers');
-
                 for(var i=0; i<ctrl.formData.pages.length; i++){
                     ctrl.formData.pages[i].number = i+1;
                 }
@@ -1301,7 +1283,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             }
 
             ctrl.addPageAfter=function(page){
-                console.debug('mwFormBuilder:addPageAfter: [page:'+page+']');
                 var index = ctrl.formData.pages.indexOf(page);
                 var newIndex = index+1;
                 var newPage = createEmptyPage(page.number+1);
@@ -1316,7 +1297,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             };
 
             ctrl.moveDownPage= function(page){
-                console.debug('mwFormBuilder:moveDownPage: [page:'+page+']');
                 var fromIndex = ctrl.formData.pages.indexOf(page);
                 var toIndex=fromIndex+1;
                 if(toIndex<ctrl.formData.pages.length){
@@ -1328,7 +1308,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             };
 
             ctrl.moveUpPage= function(page){
-                console.debug('mwFormBuilder:moveUpPage: [page:'+page+']');
                 var fromIndex = ctrl.formData.pages.indexOf(page);
                 var toIndex=fromIndex-1;
                 if(toIndex>=0){
@@ -1340,7 +1319,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
             };
 
             ctrl.removePage=function(page){
-                console.debug('mwFormBuilder:removePage: [page:'+page+']');
                 var index = ctrl.formData.pages.indexOf(page);
                 ctrl.formData.pages.splice(index,1);
                 updatePageNumbers();
@@ -1362,8 +1340,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
 
         }],
         link: function (scope, ele, attrs){
-
-            console.group('mwFormBuilder:link');
 
             var ctrl = scope.ctrl;
             if(ctrl.formStatus){
@@ -1423,8 +1399,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
                         });
                     });
                 });
-
-                console.groupEnd();
             };
 
             scope.$watch('ctrl.formData.pages.length', function(newVal, oldVal){
@@ -1448,12 +1422,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
 
 angular.module('mwFormBuilder').filter('mwStartFrom', function() {
     return function(input, start) {
-        console.group('mwFormBuilder:mwStartFrom');
-        console.debug('start:', start);
-        console.debug('input:', input);
-        console.debug('typeof input:', typeof input);
         start = +start; //parse to int
-        console.groupEnd();
         return input.slice(start);
     };
 });
