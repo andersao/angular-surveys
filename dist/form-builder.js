@@ -1450,6 +1450,8 @@ angular.module('mwFormBuilder').filter('mwStartFrom', function() {
     return function(input, start) {
         console.group('mwFormBuilder:mwStartFrom');
         console.debug('start:', start);
+        console.debug('input:', input);
+        console.debug('typeof input:', typeof input);
         start = +start; //parse to int
         console.groupEnd();
         return input.slice(start);
