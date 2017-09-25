@@ -1195,8 +1195,7 @@ angular.module('mwFormBuilder').directive('mwFormConfirmationPageBuilder', funct
 });
 
 
-angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", "$log", function ($rootScope, $log) {
-
+angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope','$log', function ($rootScope, $log) {
     return {
         replace: true,
         restrict: 'AE',
@@ -1250,15 +1249,15 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", "$log"
 
                 $log.groupEnd();
             };
-            
+
 
             ctrl.numberOfPages=function(){
                 $log.debug('mwFormBuilder:numberOfPages');
-                return Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize);                
+                return Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize);
             };
             ctrl.lastPage = function(){
                 $log.debug('mwFormBuilder:lastPage');
-               ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1); 
+                ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
             };
             ctrl.addPage = function(){
                 $log.debug('mwFormBuilder:addPage');
@@ -1269,10 +1268,10 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", "$log"
             ctrl.onChangePageSize = function(){
                 $log.debug('mwFormBuilder:onChangePageSize');
                 if(ctrl.currentPage > Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1)){
-                   ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1); 
+                    ctrl.currentPage = Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize - 1);
                 }
             };
-            
+
 
             function createEmptyPage(number){
                 $log.debug('mwFormBuilder:createEmptyPage: [number:'+number+']');
@@ -1436,7 +1435,7 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", "$log"
             });
             scope.$on('mwForm.pageEvents.changePage', function(event,data){
                 if(typeof data.page !== "undefined" && data.page < ctrl.numberOfPages()){
-                   ctrl.currentPage = data.page;
+                    ctrl.currentPage = data.page;
                 }
             });
             scope.$on('mwForm.pageEvents.addPage', function(event,data){
