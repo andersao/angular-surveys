@@ -31,6 +31,10 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ['$rootScope', functi
                 if(ctrl.api){
 
                     ctrl.api.reset = function(){
+
+                        console.log('reset form builder');
+                        console.log('current form data:', ctrl.formData);
+
                         for (var prop in ctrl.formData) {
                             if (ctrl.formData.hasOwnProperty(prop) && prop != 'pages') {
                                 delete ctrl.formData[prop];
